@@ -1,0 +1,618 @@
+@import "../scss/variables/index.scss";
+@import "../scss/mixins/minxin.scss";
+body,
+p {
+  margin: 0;
+  padding: 0;
+  font-family: "Sen", sans-serif;
+}
+.header {
+  z-index: 3;
+  width: 100%;
+  height: 80px;
+  padding: 0 80px 0 83px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $drBg;
+  color: $whiteBg;
+  gap: 32px;
+  &__links {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+  }
+  &__link {
+    &--home {
+      text-decoration: none;
+      color: $whiteBg;
+    }
+    &--blog {
+      text-decoration: none;
+      color: $whiteBg;
+    }
+    &--about {
+      text-decoration: none;
+      color: $whiteBg;
+    }
+    &--contact {
+      text-decoration: none;
+      color: $whiteBg;
+    }
+  }
+  &__subcribe {
+    padding: 16px 48px;
+    border: 0;
+    outline: 0;
+    background-color: $yellowBg;
+    color: $whiteBg;
+  }
+}
+.home::before {
+  position: absolute;
+  content: "";
+  background: radial-gradient(
+    30.56% 76.04% at 74.58% 0%,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.home::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("../image/imageHome.webp");
+  background-size: 100%;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  background-position-y: center;
+}
+.home {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  padding: 128px 80px 0 80px;
+  box-sizing: border-box;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  &__content {
+    position: absolute;
+    z-index: 2;
+    width: 804px;
+    height: 400px;
+    &--title {
+      @include font(900, 16px, 20px, $whiteBg);
+    }
+    &--highlight {
+      @include font(700, 56px, 64px, $whiteBg);
+      margin-top: 24px;
+    }
+    &--date {
+      @include font(400, 16px, 28px, $lightGray);
+      margin-top: 24px;
+    }
+    &--detail {
+      @include font(400, 16px, 28px, $lightGray);
+      margin-top: 16px;
+    }
+    &--readMore {
+      @include button(16px, 48px, 16px, 48px, $yellowBg);
+      margin-top: 48px;
+    }
+  }
+}
+.post {
+  width: 100%;
+  height: 804px;
+  margin-top: 130px;
+  padding: 0px 78px 0 80px;
+  box-sizing: border-box;
+
+  &__header {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: wheat;
+    gap: 322px;
+    
+    &--featurePost {
+      @include font(700, 36px, 48px, black);
+    }
+    &--allPost {
+      flex-grow: 1;
+      display: flex;
+      justify-content: flex-end;
+      @include font(700, 36px, 48px, black);
+    }
+    &--view {
+      @include font(400, 16px, 28px, black);
+    }
+  }
+  &__body {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+  }
+
+  &__section {
+    width: 70%;
+    height: 724px;
+    border: 1px solid $lightGray;
+    &--wraper {
+      width: 100%;
+      height: 100%;
+      padding: 32px;
+      box-sizing: border-box;
+    }
+    &--image {
+      width: 100%;
+      height: 352px;
+    }
+    &--date {
+      margin-top: 32px;
+      @include font(500, 18px, 20px, black);
+    }
+    &--highlight {
+      margin-top: 16px;
+      @include font(700, 28px, 40px, black);
+    }
+    &--describe {
+      margin-top: 16px;
+      @include font(400, 18px, 28px, $mediumGray);
+    }
+    &--button {
+      margin-top: 32px;
+      @include button(16px, 48px, 16px, 48px, $yellowBg);
+    }
+  }
+  &__sidbar {
+    width: 517px;
+    height: 724px;
+    &--content {
+      width: 100%;
+      height: 181px;
+      padding: 32px 116px 32px 32px;
+      box-sizing: border-box;
+      &:hover{
+        background-color: $lightYellow;
+      }
+    }
+    &--date {
+      @include font(500, 14px, 20px, black);
+    }
+    &--describe {
+      box-sizing: border-box;
+      padding-top: 8px;
+      @include font(700, 24px, 32px, black);
+    }
+  }
+}
+.about-mission {
+  width: 100%;
+  padding: 128px 80px 0 80px;
+  box-sizing: border-box;
+  &__partern {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    &--shape-orange {
+      width: 843px;
+      height: 23px;
+      background-color: $yellowBg;
+    }
+    &--shape-purple {
+      width: 282px;
+      height: 23px;
+      background-color: $purple;
+    }
+  }
+  &__background {
+    width: 100%;
+    height: 500px;
+    padding: 96px 108px 90px 80px;
+    gap: 82px;
+    display: flex;
+    box-sizing: border-box;
+    background-color: $lightGray;
+    & p {
+      margin: 0;
+      padding: 0;
+    }
+    &--content {
+      width: 515px;
+      height: 308px;
+    }
+    &--about-us {
+      @include font(600, 16px, 20px, #232536);
+    }
+    &--highlight {
+      margin-top: 24px;
+      padding-right: 21px;
+      box-sizing: border-box;
+      @include font(700, 36px, 48px, #232536);
+      letter-spacing: -2px;
+    }
+    &--describe {
+      margin-top: 24px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 28px;
+      color: $mediumGray;
+    }
+    &--read-more {
+      margin-top: 16px;
+    }
+    &--content-mission {
+      width: 516px;
+    }
+    &--highlight2 {
+      margin-top: 24px;
+      @include font(700, 28px, 40px, #232536);
+      letter-spacing: -2px;
+      font-style: normal;
+    }
+  }
+}
+.choose-catalogy {
+  width: 100%;
+  height: 452px;
+  padding: 128px 80px 0 80px;
+  box-sizing: border-box;
+  &__choose {
+    width: 100%;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    @include font(700, 36px, 48px, #232536);
+  }
+  &__catalogy {
+    width: 100%;
+    height: 228px;
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    &--item {
+      width: 296px;
+      height: 100%;
+      padding: 32px 32px 32px 32px;
+      flex-grow: 1;
+      box-sizing: border-box;
+      border: 1px solid $mediumGray;
+      &:hover{
+        background-color: $yellowBg;
+      }
+      & p {
+        padding: 0;
+        margin: 0;
+      }
+    }
+    &--icon {
+      width: 48px;
+      height: 48px;
+    }
+    &--business {
+      margin-top: 16px;
+      @include font(700, 28px, 40px, black);
+    }
+    &--describe {
+      margin-top: 4px;
+      @include font(400, 16px, 28px, $mediumGray);
+    }
+  }
+}
+.special-post {
+  position: relative;
+  width: 100%;
+  height: 832px;
+  padding: 128px 80px 0 80px;
+  box-sizing: border-box;
+  display: flex;
+
+  &__image {
+    width: 949px;
+    height: 705px;
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+  &__content {
+    position: absolute;
+    right: 80px;
+    bottom: 0;
+    width: 706px;
+    height: 584px;
+    padding: 80px;
+    box-sizing: border-box;
+    border: 0;
+    background-color: white;
+    &--header {
+      @include font(600, 16px, 20px, #232536);
+      letter-spacing: 3px;
+    }
+    &--highlight {
+      margin-top: 24px;
+      @include font(700, 48px, 64px, #232536);
+      letter-spacing: -2px;
+      & p {
+        margin: 0;
+      }
+    }
+    &--describe {
+      margin-top: 16px;
+      @include font(400, 16px, 28px, #6d6e76);
+    }
+    &--button {
+      margin-top: 32px;
+      @include button(16px, 48px, 16px, 48px, $yellowBg);
+    }
+  }
+}
+.list-authors {
+  width: 100%;
+  height: 548px;
+  @include padding();
+  box-sizing: border-box;
+  &__lists {
+    width: 100%;
+    height: 96px;
+    display: flex;
+    justify-content: center;
+    @include font(700,36px,48px,#232536);
+    letter-spacing:-2px;
+  }
+  &__account {
+    width: 100%;
+    height: 324px;
+    display: flex;
+    gap: 32px;
+
+    &--item {
+      width: 296px;
+      height: 324px;
+      @include padding(40px, 28px, 40px, 28px);
+      box-sizing: border-box;
+      background-color:$lightGray;
+      text-align: center;
+    }
+    &--image {
+      width: 100%;
+      height: 128px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &--img {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    &--highlight {
+      @include font(700, 28px, 40px, #232536);
+      letter-spacing: -1px;
+    }
+    &--describe {
+      @include font(400, 14px, 20px, $mediumGray);
+    }
+
+    &--group {
+      width: 112px;
+      height: 16px;
+      display: flex;
+      gap: 16px;
+      margin-top: 20px;
+    }
+    &--icon {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.logo-component{
+  width: 100%;
+  height: 148px;
+  display: flex;
+  @include padding(0px,109px,0px,94px);
+  gap: 73.94px;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  &__featured--Fea-in{
+    @include font(700,24px,32px,$mediumGray)
+  }
+  &__logo-1{
+    width: 133.87px;
+  }
+}
+.testimonials{
+  width: 100%;
+  height: 560px;
+  padding:96px 111px 74px 112px;
+  box-sizing: border-box;
+  display: flex;
+  background-color: $lightYellow;
+  &__section{
+    width:439px;
+    height: 298px;
+    border-right: 1px solid $mediumGray;
+    @include padding(0 80px 98px 0 );
+    box-sizing: border-box;
+    &--title{
+      @include font(600,16px,20px,#232536);
+      letter-spacing: 3px;
+    }
+    &--highlight{
+      margin-top: 12px;
+      @include font(700,36px,48px,#232536);
+      letter-spacing: -2px;
+    }
+    &--describe{
+      margin-top: 16px;
+      @include font(400,16px,28px,#232536)
+    }
+  }
+  &__sidbar{
+    width: 628px;
+    height: 298px;
+    padding: 0 63px 0 96px;
+    box-sizing: border-box;
+ }
+    &__content{
+       @include font(700,24px,32px,$blacks);
+    }
+  &__user{
+    margin-top: 121px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    &--infomation{
+      flex-grow: 1;
+    }
+    &--image{
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+    &--button{
+      display: flex;
+      align-items: center;
+      justify-content:center;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-color: black;
+      color: white;
+    }
+ 
+  }
+ 
+}
+.join-team{
+  width: 100%;
+ padding: 128px 0;
+  text-align: center;
+  box-sizing: border-box;
+  &__highlight{
+    @include font(700,26px,48px,$blacks);
+    letter-spacing:-2px;
+  }
+  &__describe{
+    margin-top: 16px;
+    @include font(400,16px,28px,$mediumGray)
+  }
+  &__button{
+    margin-top: 32px;
+    @include button(16px ,48px, 16px, 48px, $yellowBg)
+  }
+}
+.footer{
+  position: relative;
+  width: 100%;
+  height: 560px;
+  @include padding2(0px,80px,0px,80px);
+  box-sizing:border-box;
+  background-color: $blacks;
+  &__head{
+    width: 100%;
+    height: 144px;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: space-between;
+    &--logo{
+      font-weight: 700;
+      font-size: large;
+    }
+     &--links{
+    display: flex;
+    gap: 24px;
+  }
+  }
+  &__main::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFFFFF;
+    opacity: 0.05;
+    z-index: 0;
+  }
+  &__main{
+    position: relative;
+    width: 100%;
+    height: 256px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    @include padding2(0px,64px,0px,64px);
+    box-sizing: border-box;
+    z-index: 9999;
+  
+    &--text{
+      width: 562px;
+      height: 96px;
+      @include font(700,36px,48px,$whiteBg);
+      letter-spacing: -2px;
+    }
+    &--box{
+      width: 323px;
+      height:100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-grow: 1;
+    }
+    &--input{
+      position: absolute;
+      width: 323px;
+      height: 52px;
+      outline: none;
+      border: 1px solid $darGray;
+      background-color: transparent;
+      &--input::placeholder{
+        @include font(400,16px,28px,$mediumGray);
+      }
+      z-index: 9999;
+    }
+    &--button{
+      @include font(700,18px,24px,$blacks);
+      height: 56px;
+      @include button(16px ,48px, 16px, 48px, $yellowBg)
+    }
+  }
+  &__comment{
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--text{
+      @include font(400,16px,28px,$whiteBg)
+    }
+    &--icon{
+      display: flex;
+      gap: 26.67px;
+      color: $mediumGray;
+    }
+  }
+}
+// }
